@@ -1,0 +1,21 @@
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+    {path: '', redirectTo: 'start', pathMatch: 'full'},
+    {path: 'start', loadChildren: './pages/start/start.module#StartPageModule'},
+    {path: 'alert', loadChildren: './pages/alert/alert.module#AlertPageModule'},
+    {path: 'action-sheet', loadChildren: './pages/action-sheet/action-sheet.module#ActionSheetPageModule'},
+    {path: 'avatar', loadChildren: './pages/avatar/avatar.module#AvatarPageModule'},
+  { path: 'buttons', loadChildren: './pages/buttons/buttons.module#ButtonsPageModule' },
+  { path: 'cards', loadChildren: './pages/cards/cards.module#CardsPageModule' }
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
+    ],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
