@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {MenuController} from '@ionic/angular';
 
 @Component({
     selector: 'app-start',
@@ -67,13 +68,32 @@ export class StartPage implements OnInit {
             icon: 'list',
             name: 'Sliding List',
             redirectTo: '/list'
+        },
+        {
+            icon: 'reorder',
+            name: 'Reorder List',
+            redirectTo: '/list-reorder'
+        },
+        {
+            icon: 'refresh-circle',
+            name: 'Loading',
+            redirectTo: '/loading'
+        },
+        {
+            icon: 'refresh-circle',
+            name: 'Loading',
+            redirectTo: '/loading'
         }
     ];
 
-    constructor() {
+    constructor( private menuCtrl: MenuController) {
     }
 
     ngOnInit() {
+    }
+
+    toggleMenu() {
+        this.menuCtrl.toggle();
     }
 
 }

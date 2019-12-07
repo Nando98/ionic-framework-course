@@ -10,6 +10,8 @@ import {IonList} from '@ionic/angular';
 })
 export class ListPage implements OnInit {
 
+    // Hacemos una refrencia al IonList utilizando un hash myList en el elemento ion-list
+    // Esto permite obtener todos los methods que tiene la lista
     @ViewChild('myList', {static: false}) myList: IonList;
     userList: Observable<any>;
 
